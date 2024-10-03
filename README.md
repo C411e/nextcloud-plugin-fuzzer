@@ -6,6 +6,8 @@
 
     git clone git@github.com:C411e/nextcloud-plugin-fuzzer.git
     cd nextcloud-plugin-fuzzer
+    python3 python -m venv venv
+    source venv/bin/activate
     pip3 install -r requirements.txt
 
 ## Parameters

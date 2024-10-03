@@ -43,6 +43,7 @@ def download_plugin_lists(url):
 def download_plugin_lists_from_repository(url):
     for i in range (1,12):
         r = requests.get(url+str(i))
+        print("--- Download Plugins from %s%s ---" %(url,str(i)))
         soup = BeautifulSoup(r.content, 'html5lib')
         for a in soup.find_all('a', href=True):
             if a['href'].startswith("/nextcloud/"):
@@ -84,7 +85,6 @@ def find_nextcloud(url):
 print("--- Download Plugins from %s ---" %download_url)
 download_plugin_lists(download_url)
 
-print("--- Download Plugins from %s ---" %download_url_repository)
 download_plugin_lists_from_repository(download_url_repository)
 
 length_plugins = len(plugins)
